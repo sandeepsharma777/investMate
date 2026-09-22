@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create account · InvestMate</title>
+<meta name="description" content="Create your InvestMate account and choose which asset types you want to track." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/variables.css" />
+<link rel="stylesheet" href="../css/base.css" />
+<link rel="stylesheet" href="../css/components.css" />
+<link rel="stylesheet" href="../css/auth.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <aside class="auth-aside">
+    <div class="brand">
+      <div class="brand__mark">IM</div>
+      <span class="brand__name">InvestMate</span>
+    </div>
+
+    <div>
+      <p class="auth-aside__quote">Stocks, funds, gold, deposits, crypto — <span>tracked your way.</span></p>
+      <p style="color: var(--ink-400); max-width: 380px; font-size: var(--fs-sm);">
+        Tell us what you invest in once at signup. InvestMate builds your dashboard,
+        forms and reports around exactly those asset types — nothing you don't need.
+      </p>
+    </div>
+
+    <p class="auth-aside__foot">Takes about a minute. You can change this anytime in Settings.</p>
+  </aside>
+
+  <main class="auth-main">
+    <div class="auth-card auth-card--wide">
+      <h1 id="step-heading">Create your account</h1>
+      <p class="auth-card__sub" id="step-subheading">Start with the basics — you're two steps from your dashboard.</p>
+
+      <div class="step-label">
+        <span>Step <b id="step-current">1</b> of 2</span>
+        <span id="step-name-label">Account details</span>
+      </div>
+      <div class="step-track">
+        <div class="step-track__item is-active" data-step="1"></div>
+        <div class="step-track__item" data-step="2"></div>
+      </div>
+
+      <!-- STEP 1: Account details -->
+      <form id="step-1" novalidate>
+        <div class="field-row">
+          <div class="field" id="field-name">
+            <label class="field__label" for="name">Full name</label>
+            <input class="input" type="text" id="name" placeholder="Asha Verma" autocomplete="name" required />
+            <p class="field__error">Enter your name.</p>
+          </div>
+          <div class="field" id="field-currency">
+            <label class="field__label" for="currency">Reporting currency</label>
+            <select class="input" id="currency">
+              <option value="INR" selected>₹ INR — Indian Rupee</option>
+              <option value="USD">$ USD — US Dollar</option>
+              <option value="EUR">€ EUR — Euro</option>
+              <option value="GBP">£ GBP — British Pound</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field" id="field-email">
+          <label class="field__label" for="email">Email address</label>
+          <input class="input" type="email" id="email" placeholder="you@example.com" autocomplete="email" required />
+          <p class="field__error">Enter a valid email address.</p>
+        </div>
+
+        <div class="field-row">
+          <div class="field" id="field-password">
+            <label class="field__label" for="password">Password</label>
+            <input class="input" type="password" id="password" placeholder="At least 6 characters" autocomplete="new-password" required />
+            <div class="password-strength" id="pw-strength"><span></span><span></span><span></span></div>
+            <p class="field__error">Password must be at least 6 characters.</p>
+          </div>
+          <div class="field" id="field-password2">
+            <label class="field__label" for="password2">Confirm password</label>
+            <input class="input" type="password" id="password2" placeholder="Re-enter password" autocomplete="new-password" required />
+            <p class="field__error">Passwords don't match.</p>
+          </div>
+        </div>
+
+        <label class="checkbox-row">
+          <input type="checkbox" id="agree-terms" />
+          <span>I understand InvestMate is manual-entry only — I'll enter and update my own prices, no live market data is pulled in.</span>
+        </label>
+
+        <div class="auth-actions">
+          <button class="btn btn--primary btn--block" type="submit">Continue</button>
+        </div>
+      </form>
+
+      <!-- STEP 2: Asset preferences -->
+      <form id="step-2" novalidate style="display:none;">
+        <p style="color: var(--ink-200); font-size: var(--fs-sm); margin-bottom: var(--sp-4);">
+          Select every asset type you'd like InvestMate to track. This only shapes your menus and
+          forms — you can add or remove types later from Settings.
+        </p>
+
+        <div class="asset-picker" id="asset-picker"></div>
+        <p class="field__error" id="asset-picker-error" style="display:none; margin-top: var(--sp-3);">Pick at least one asset type to continue.</p>
+
+        <div class="auth-actions">
+          <button class="btn btn--ghost btn--block" type="button" id="back-to-step-1">Back</button>
+          <button class="btn btn--primary btn--block" type="submit" id="signup-submit">Create account</button>
+        </div>
+      </form>
+
+      <p class="auth-foot">Already have an account? <a href="index.html">Log in</a></p>
+    </div>
+  </main>
+</div>
+
+<script src="../js/db.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/signup.js"></script>
+</body>
+</html>
+
