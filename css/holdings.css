@@ -1,0 +1,57 @@
+/* =========================================================
+   InvestMate — Holdings
+   ========================================================= */
+
+.tabs {
+  display: flex;
+  gap: var(--sp-1);
+  border-bottom: 1px solid var(--ink-600);
+  margin-bottom: var(--sp-5);
+  overflow-x: auto;
+}
+.tab-btn {
+  padding: var(--sp-2) var(--sp-4);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--ink-400);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  display: flex; align-items: center; gap: 6px;
+}
+.tab-btn .count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  background: var(--ink-700);
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+.tab-btn:hover { color: var(--ink-050); }
+.tab-btn.is-active { color: var(--gold-500); border-bottom-color: var(--gold-500); }
+
+.type-fields { display: none; }
+.type-fields.is-active { display: block; animation: fadeIn var(--dur-fast) var(--ease-out); }
+
+.form-section-title {
+  font-size: var(--fs-2xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--paper-ink-soft);
+  font-weight: 700;
+  margin: var(--sp-5) 0 var(--sp-3);
+  padding-top: var(--sp-4);
+  border-top: 1px dashed var(--paper-line);
+}
+.form-section-title:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+.sort-select {
+  padding: 8px 30px 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--paper-line);
+  background: #fff;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--paper-ink-soft);
+}
+
+.table-scroll { overflow-x: auto; }
+.table-scroll .ledger-table { min-width: 720px; }

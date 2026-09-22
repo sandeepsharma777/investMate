@@ -1,0 +1,57 @@
+/* =========================================================
+   InvestMate — Analytics
+   ========================================================= */
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+@media (max-width: 1000px) { .analytics-grid { grid-template-columns: 1fr; } }
+
+.chart-box { position: relative; height: 260px; }
+.chart-box--tall { height: 320px; }
+
+.rank-row {
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-2) 0;
+  border-bottom: 1px dashed var(--paper-line);
+}
+.rank-row:last-child { border-bottom: none; }
+.rank-row__idx { font-family: var(--font-mono); color: var(--paper-ink-soft); font-size: var(--fs-xs); }
+.rank-row__name { font-weight: 600; font-size: var(--fs-sm); }
+.rank-row__sub { font-size: var(--fs-2xs); color: var(--paper-ink-soft); }
+.rank-row__val { text-align: right; }
+
+.toggle-group {
+  display: inline-flex;
+  background: var(--paper-100);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+.toggle-group button {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--paper-ink-soft);
+}
+.toggle-group button.is-active { background: var(--ink-900); color: var(--paper-000); }
+
+.insight-banner {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  padding: var(--sp-4);
+  border-radius: var(--radius-md);
+  background: var(--gold-100);
+  color: var(--gold-600);
+  margin-bottom: var(--sp-5);
+}
+.insight-banner svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; }
+.insight-banner p { color: var(--gold-600); margin: 0; font-size: var(--fs-sm); }
+.insight-banner strong { color: var(--paper-ink); }

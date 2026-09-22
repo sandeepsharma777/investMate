@@ -1,0 +1,85 @@
+/* =========================================================
+   InvestMate — Design Tokens
+   "Vault & Ledger": dark ink chrome around warm paper cards,
+   brass gold + jade/oxblood for gains & losses, tabular mono
+   figures throughout so every number reads like a statement.
+   ========================================================= */
+
+:root {
+  /* ---- Core palette ---- */
+  --ink-900: #0D1216;      /* app shell background */
+  --ink-800: #141B21;      /* sidebar / nav surface */
+  --ink-700: #1C252C;      /* raised dark surface (cards on dark) */
+  --ink-600: #2A343C;      /* borders / dividers on dark */
+  --ink-400: #5C6A73;      /* muted text on dark */
+  --ink-200: #A6B1B8;      /* secondary text on dark */
+  --ink-050: #EDF0F1;      /* primary text on dark */
+
+  --paper-000: #FBF8F1;    /* ledger paper card background */
+  --paper-100: #F3EEE1;    /* paper card alt / hover */
+  --paper-line: #DDD3BC;   /* hairline rule on paper */
+  --paper-ink: #201A12;    /* primary text on paper */
+  --paper-ink-soft: #6B6152; /* secondary text on paper */
+
+  --gold-500: #C9A24B;     /* brass — primary accent */
+  --gold-600: #A9822F;     /* brass, pressed/darker */
+  --gold-100: #F1E2B8;     /* brass tint for badges */
+
+  --jade-600: #2F6B4C;     /* gains / positive */
+  --jade-100: #DCEDE2;
+  --oxblood-600: #8A2F3C;  /* losses / negative */
+  --oxblood-100: #F3DEE0;
+
+  --sky-600: #2F6B7D;      /* info / links on paper */
+
+  /* Asset-class seal colors */
+  --seal-stocks: #2F6B7D;
+  --seal-mf: #6B4F9E;
+  --seal-gold: #A9822F;
+  --seal-fd: #2F6B4C;
+  --seal-crypto: #B4622F;
+  --seal-other: #5C6A73;
+
+  /* ---- Typography ---- */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+
+  --fs-2xs: 0.6875rem;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3rem;
+
+  /* ---- Spacing scale ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+
+  /* ---- Shape & elevation ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-card: 0 1px 2px rgba(13, 18, 22, 0.06), 0 8px 24px -12px rgba(13, 18, 22, 0.18);
+  --shadow-pop: 0 12px 40px -8px rgba(13, 18, 22, 0.35);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 140ms;
+  --dur-med: 260ms;
+
+  --sidebar-w: 240px;
+}
+
+@media (prefers-color-scheme: light) {
+  /* App is intentionally single-theme (vault shell + paper cards);
+     reserved for future light-mode toggle. */
+}

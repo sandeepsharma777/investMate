@@ -1,0 +1,75 @@
+/* =========================================================
+   InvestMate — Dashboard
+   ========================================================= */
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--sp-5);
+  align-items: start;
+}
+@media (max-width: 1100px) { .dash-grid { grid-template-columns: 1fr; } }
+
+/* Allocation donut panel */
+.allocation-panel { display: flex; gap: var(--sp-5); align-items: center; }
+@media (max-width: 520px) { .allocation-panel { flex-direction: column; } }
+
+.allocation-panel__chart { position: relative; flex-shrink: 0; width: 180px; height: 180px; }
+.allocation-panel__center {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+}
+.allocation-panel__center b { font-family: var(--font-mono); font-size: var(--fs-lg); }
+.allocation-panel__center span { font-size: var(--fs-2xs); color: var(--paper-ink-soft); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.legend { display: flex; flex-direction: column; gap: var(--sp-2); flex: 1; min-width: 0; }
+.legend__row { display: flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-sm); }
+.legend__swatch { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+.legend__name { flex: 1; font-weight: 600; }
+.legend__pct { font-family: var(--font-mono); color: var(--paper-ink-soft); font-size: var(--fs-xs); }
+.legend__amt { font-family: var(--font-mono); font-size: var(--fs-xs); width: 90px; text-align: right; }
+
+/* Best/worst performer & return-by-asset mini panel */
+.perf-list__row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--sp-3) 0;
+  border-bottom: 1px dashed var(--paper-line);
+}
+.perf-list__row:last-child { border-bottom: none; }
+.perf-list__name { display: flex; align-items: center; gap: var(--sp-2); font-weight: 600; font-size: var(--fs-sm); }
+.perf-list__figures { text-align: right; }
+.perf-list__figures .num { font-size: var(--fs-sm); display: block; }
+.perf-list__figures small { font-size: var(--fs-2xs); color: var(--paper-ink-soft); }
+
+/* Quick add row */
+.quick-add { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+.quick-add__btn {
+  display: flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: 999px;
+  border: 1.5px dashed var(--paper-line);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--paper-ink-soft);
+  background: #fff;
+}
+.quick-add__btn:hover { border-color: var(--gold-600); color: var(--gold-600); background: var(--gold-100); }
+.quick-add__btn .seal__dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* Trend / cost-vs-value bars (CSS-only sparkline bars, no live data needed) */
+.bar-row { display: flex; align-items: center; gap: var(--sp-3); padding: 7px 0; }
+.bar-row__label { width: 110px; font-size: var(--fs-xs); font-weight: 600; flex-shrink: 0; }
+.bar-track { flex: 1; height: 8px; border-radius: 4px; background: var(--paper-100); overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; background: var(--gold-500); transition: width var(--dur-med) var(--ease-out); }
+.bar-row__value { width: 90px; text-align: right; font-size: var(--fs-xs); }
+
+.fee-tax-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); }
+@media (max-width: 640px) { .fee-tax-summary { grid-template-columns: 1fr; } }
+.fee-tax-summary__item {
+  padding: var(--sp-4);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius-md);
+}
+.fee-tax-summary__item .stat-card__label { margin-bottom: 6px; }
+.fee-tax-summary__item .num { font-size: var(--fs-lg); }
